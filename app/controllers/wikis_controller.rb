@@ -1,5 +1,5 @@
 class WikisController < ApplicationController
-  def show
+  def index
   end
 
   def new
