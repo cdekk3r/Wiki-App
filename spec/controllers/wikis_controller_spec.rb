@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe WikisController, type: :controller do
   let(:my_wiki) { Wiki.create!(title: "New title", body: "New body", private: true) }
 
