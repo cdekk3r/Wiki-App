@@ -4,6 +4,7 @@ class WikisController < ApplicationController
   end
 
   def new
+    @wiki = Wiki.new
   end
 
   def create
