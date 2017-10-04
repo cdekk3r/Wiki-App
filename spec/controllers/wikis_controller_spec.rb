@@ -37,20 +37,20 @@ RSpec.describe WikisController, type: :controller do
     end
   end
   
-  # describe "WIKI create" do
-  #   it "increases the number of Post by 1" do
-  #     expect{post :create, wiki: {title: "New title", body: "New body", private: true}}.to change(Wiki,:count).by(1)
-  #   end
+  describe "WIKI create" do
+    it "increases the number of Post by 1" do
+      expect{post :create, wiki: {title: "New title", body: "New body", private: true}}.to change(Wiki,:count).by(1)
+    end
     
-  #   it "assigns the new wiki to @wiki" do
-  #     post :create, wiki: {title: "New title", body: "New body", private: true}
-  #     expect(assigns(:post)).to eq Wiki.last
-  #   end
+    it "assigns the new wiki to @wiki" do
+      post :create, wiki: {title: "New title", body: "New body", private: true}
+      expect(assigns(:wiki)).to eq Wiki.last
+    end
     
-  #   it "redirects to the new wiki" do
-  #     post :create, wiki: {title: "New title", body: "New body", private: true}
-  #     expect(response).to redirect_to Wiki.last
-  #   end
-  # end
+    it "redirects to the new wiki" do
+      post :create, wiki: {title: "New title", body: "New body", private: true}
+      expect(response).to redirect_to Wiki.last
+    end
+  end
     
 end

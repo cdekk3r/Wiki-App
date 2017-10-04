@@ -8,6 +8,14 @@ class WikisController < ApplicationController
   end
 
   def create
+    @wiki = Wiki.new(wiki_params)
+    
+    if @wiki.save
+      redirect_to @wiki, notice: "Wiki was saved successfully."
+    else
+      flash.now[:alert] = "Error creating wiki. Please try again."
+      render :new
+    end
   end
 
   def edit
@@ -17,5 +25,11 @@ class WikisController < ApplicationController
   end
 
   def destroy
+  end
+  
+  private
+  
+  def wiki_params
+    params.require(:wiki).permit(:title, :body, :private)
   end
 end
