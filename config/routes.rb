@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resources :wikis
-
+  root to: 'welcome#index'
+ 
   get 'about' => 'welcome#about'
   
-  root to: 'welcome#index'
-  
+  resources :wikis
   
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

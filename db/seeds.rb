@@ -11,8 +11,9 @@ require 'random_data'
     Wiki.create!(
         title: RandomData.random_sentence,
         body: RandomData.random_paragraph
-        )
+    )
 end
+
 wikis = Wiki.all
 
 puts "Seeds finished"
