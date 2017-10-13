@@ -2,7 +2,7 @@ require 'rails_helper'
 include RandomData
 
 RSpec.describe WikisController, type: :controller do
-  let(:my_wiki) { Wiki.create!(title: "New title", body: "New body", private: false) }
+  let(:my_wiki) { Wiki.create!(title: "New title", body: "New body", private: false, user: my_user) }
   let(:my_user) { User.create!(email: "user@user.com", password: "password") }
 
   before(:each) do
