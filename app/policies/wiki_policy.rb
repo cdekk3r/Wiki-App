@@ -58,7 +58,6 @@ class WikiPolicy < ApplicationPolicy
                 all_wikis.each do |wiki|
                     if wiki.private == false || wiki.user == user
                         wikis << wiki
-                        puts wikis
                     end
                 end
             end

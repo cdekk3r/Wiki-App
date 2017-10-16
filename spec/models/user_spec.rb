@@ -21,16 +21,16 @@ RSpec.describe User, type: :model do
             expect(user).to respond_to(:role)
         end
         
-        # it "responds to admin?" do
-        #     expect(user).to respond_to(:admin?)
-        # end
+        it "responds to admin?" do
+            expect(user).to respond_to(:admin?)
+        end
         
         # it "responds to premium?" do
         #     expect(user).to respond_to(:premium?)
         # end
         
-        # it "responds to standard?" do
-        #     expect(user).to respond_to(:standard?)
-        # end
+        it "responds to standard?" do
+            expect(user).to respond_to(:standard?)
+        end
     end
 end
