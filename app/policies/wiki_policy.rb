@@ -6,6 +6,10 @@ class WikiPolicy < ApplicationPolicy
         @wiki = wiki
     end
     
+    def index 
+        user.present?    
+    end
+    
     def show?
         user.present?
     end
@@ -23,7 +27,7 @@ class WikiPolicy < ApplicationPolicy
     end
     
     def edit?
-        user.present?
+        update?
     end
     
     def destroy?
@@ -40,19 +44,20 @@ class WikiPolicy < ApplicationPolicy
         
         def resolve
             wikis = []
-            if user.nil?
-                all_wikis = @scope.all
+            if user.admin?
+                wikis = scope.all
+            elsif user.premium?
+                all_wikis = scope.all
+                wikis = []
                 all_wikis.each do |wiki|
-                    if wiki.private == false
+                    if wiki.private == false || wiki.user == user
                         wikis << wiki
                     end
                 end
-            elsif user.admin?
-                wikis = scope.all
             else
                 all_wikis = scope.all
                 all_wikis.each do |wiki|
-                    if wiki.private == false || wiki.user == user
+                    if wiki.private == false
                         wikis << wiki
                     end
                 end

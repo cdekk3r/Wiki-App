@@ -20,10 +20,30 @@ wikis = Wiki.all
 15.times do
     User.create!(
         email: Faker::Internet.email,
-        password: Faker::Internet.password(6)
+        password: Faker::Internet.password(8)
     )
 end
 
+admin = User.create!(
+    email:    'admin@bloc.com',
+    password: 'password',
+    password_confirmation: 'password',
+    role:     'admin'
+)
+
+premium = User.create!(
+    email:    'premium@bloc.com',
+    password: 'password',
+    password_confirmation: 'password',
+    role:     'premium'
+)
+
+standard = User.create!(
+    email:    'standard@example.com',
+    password: 'password',
+    password_confirmation: 'password',
+    role:     'standard'
+)
 users = User.all
 
 puts "Seeds finished"

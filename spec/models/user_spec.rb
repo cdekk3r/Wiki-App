@@ -13,8 +13,8 @@ RSpec.describe User, type: :model do
     it { should have_many(:wikis) }
     
     describe "attributes" do
-        it "should have email attribute" do
-            expect(user).to have_attributes(email: "user@bloc.com")
+        it "should have email and password attributes" do
+            expect(user).to have_attributes(email: "user@bloc.com", password: "password")
         end
         
         it "responds to role" do
@@ -25,9 +25,9 @@ RSpec.describe User, type: :model do
             expect(user).to respond_to(:admin?)
         end
         
-        # it "responds to premium?" do
-        #     expect(user).to respond_to(:premium?)
-        # end
+        it "responds to premium?" do
+            expect(user).to respond_to(:premium?)
+        end
         
         it "responds to standard?" do
             expect(user).to respond_to(:standard?)
