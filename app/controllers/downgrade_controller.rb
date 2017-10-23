@@ -4,7 +4,7 @@ class DowngradeController < ApplicationController
     
     wikis = Wiki.all
     wikis.each do |wiki|
-    	if current_user = wiki.user
+    	if @user == wiki.user
     		wiki.update_attribute(:private, false)
     	end
     end
