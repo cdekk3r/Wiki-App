@@ -7,16 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'random_data'
 
-50.times do
-    Wiki.create!(
-        title: Faker::LeagueOfLegends.quote,
-        body: Faker::MostInterestingManInTheWorld.quote,
-        private: false
-    )
-end
-
-wikis = Wiki.all
-
 15.times do
     User.create!(
         email: Faker::Internet.email,
@@ -45,6 +35,17 @@ standard = User.create!(
     role:     'standard'
 )
 users = User.all
+
+50.times do
+    Wiki.create!(
+        title: Faker::LeagueOfLegends.quote,
+        body: Faker::MostInterestingManInTheWorld.quote,
+        private: false,
+        user: User.first
+    )
+end
+
+wikis = Wiki.all
 
 puts "Seeds finished"
 puts "#{User.count} users created"
