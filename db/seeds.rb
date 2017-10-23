@@ -41,7 +41,7 @@ users = User.all
         title: Faker::LeagueOfLegends.quote,
         body: Faker::MostInterestingManInTheWorld.quote,
         private: false,
-        user: User.first
+        user: users.sample
     )
 end
 

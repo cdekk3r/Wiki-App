@@ -1,11 +1,8 @@
 <h1><%= @wiki.title %></h1>
-<small>
-    Creator: <%= @wiki.user.email %>
-</small>
 
 <div class="row">
     <div class="col-md-8">
-        <p><%= @wiki.body %></p>
+        <p><%= markdown(@wiki.body) %></p>
         <p><%= @wiki.private %></p>
     </div>
     <div class="col-md-4">
