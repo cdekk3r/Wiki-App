@@ -1,15 +1,13 @@
 require 'stripe'
 
 Rails.application.routes.draw do
-  get 'downgrade/create'
-
-  get 'charges/create'
-
   root to: 'welcome#index'
  
   get 'about' => 'welcome#about'
   
-  resources :wikis
+  resources :wikis do
+    resources :collaborators, only: [:new, :create, :destroy]
+  end
   
   resources :charges, only: [:new, :create]
   resources :downgrade, only: [:new, :create]
