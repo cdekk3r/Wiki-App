@@ -2,6 +2,13 @@
 <small>
     Creator: <%= @wiki.user.email %>
 </small>
+<small>
+    Collaborators: 
+    <% @wiki.collaborators.each do |t| %>
+        <% user = User.find(t.user_id) %>
+        <%= user.email %>
+    <% end %>
+</small>
 
 <div class="row">
     <div class="col-md-8">

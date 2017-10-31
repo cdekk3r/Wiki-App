@@ -2,7 +2,7 @@ class WikisController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @wikis = Wiki.all
+    @wikis = policy_scope(Wiki)
   end
 
   def new
@@ -13,7 +13,6 @@ class WikisController < ApplicationController
     @user = current_user
     @wiki = Wiki.new(wiki_params)
     @wiki.user = current_user
-    @wiki.private = false
     
     if @wiki.save
       redirect_to @wiki, notice: "Wiki was saved successfully."

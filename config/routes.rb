@@ -1,6 +1,8 @@
 require 'stripe'
 
 Rails.application.routes.draw do
+  get 'downgrade/create'
+  
   root to: 'welcome#index'
  
   get 'about' => 'welcome#about'
