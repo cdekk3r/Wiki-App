@@ -35,8 +35,8 @@ The config/application.example.yml file illustrates how environment variables sh
 
 To run Blocipedia locally:
 
-Clone the repository
-Run bundle install
-Create and migrate the SQLite database with rake db:create and rake db:migrate
-Start the server using rails server
-Run the app on localhost:3000
+- Clone the repository
+- Run bundle install
+- Create and migrate the SQLite database with rake db:create and rake db:migrate
+- Start the server using rails server
+- Run the app on localhost:3000
