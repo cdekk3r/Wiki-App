@@ -1,4 +1,4 @@
-Blocipedia
+<h1>Blocipedia<h1>
 
 Blocipedia is a Ruby on Rails application that allows users to create wikis and collaborate on other wikis. Users can pay to upgrade their membership, allowing them to view and create private wikis.
 
@@ -17,7 +17,7 @@ Setup and Configuration
 
 Languages and Frameworks: Ruby on Rails and Bootstrap
 
-Ruby version 2.3.0
+Ruby version 2.3.4
 
 Development Tools and Gems include:
 
