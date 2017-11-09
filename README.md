@@ -1,4 +1,4 @@
-<h1>Blocipedia<h1>
+Blocipedia
 
 Blocipedia is a Ruby on Rails application that allows users to create wikis and collaborate on other wikis. Users can pay to upgrade their membership, allowing them to view and create private wikis.
 
