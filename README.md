@@ -1,4 +1,4 @@
-Blocipedia
+<h3>Blocipedia</h3>
 
 Blocipedia is a Ruby on Rails application that allows users to create wikis and collaborate on other wikis. Users can pay to upgrade their membership, allowing them to view and create private wikis.
 
@@ -6,7 +6,7 @@ The source code is here on GitHub: https://github.com/cdekk3r/new-rails-project
 
 This app was created as part of the Bloc Full Stack Web Development course.
 
-Features
+<h3>Features</h3>
 
 - Users can create a standard account in order to create, edit, and collaborate on public wikis using Markdown syntax. Anyone can view public wikis.
 - Users can pay to upgrade their account to Premium in order to view and create private wikis.
@@ -14,20 +14,20 @@ Features
 - Premium users can downgrade their account back to Standard.
 - When a user downgrades his or her account, his or her private wikis will automatically become public.
 
-Setup and Configuration
+<h3>Setup and Configuration</h3>
 
 Languages and Frameworks: Ruby on Rails and Bootstrap
 
 Ruby version 2.3.4
 
-Development Tools and Gems include:
+<h3>Development Tools and Gems include:</h3>
 
 Devise for user authentication
 Redcarpet for Markdown formatting
 Pundit for authorization
 Stripe for payments
 
-Setup:
+<h3>Setup:</h3>
 
 Environment variables were set using Figaro and are stored in config/application.yml (ignored by git).
 
