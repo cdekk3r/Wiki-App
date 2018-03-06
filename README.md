@@ -22,10 +22,10 @@ Ruby version 2.3.4
 
 <h3>Development Tools and Gems include:</h3>
 
-Devise for user authentication
-Redcarpet for Markdown formatting
-Pundit for authorization
-Stripe for payments
+- Devise for user authentication
+- Redcarpet for Markdown formatting
+- Pundit for authorization
+- Stripe for payments
 
 <h3>Setup:</h3>
 
