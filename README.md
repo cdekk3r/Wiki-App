@@ -71,10 +71,21 @@ wikis_all. each do |wiki|
     end
 end
 ```
-
+Lastly, in `wikis_controller` changing the index action's `@wikis` variable to `policy_scope(Wiki)` instead of `Wiki.all` to apply the created scope.
 
 <h3>Problem</h3>
+Since the purpose of the application is to share and collaborate on markdown it's important there be proper formatting of the text.
 
 <h3>Solution</h3>
+To achieve the markdown formatting needed I used the Redcarpet gem. After running `gem install redcarpet` what I would need to do is create a markdown method in `application_helper.rb`. The most important
+lines in this method will be the following:
 
+```
+renderer = Redcarpet::Render::HTML.new(options)
+markdown = Redcarpet::Markdown.new(renderer, extensions)
+```
+The extensions and options variables are hashes also created in the markdown method. There are multiple formatting options you can enable inside the hashes depending on what you're looking for so I won't go 
+into detail there. Now that my markdown method is created all I had to do was wrap any text I wanted to format with the method. 
+
+`<p><%= markdown(@wiki.body) %></p>`
 
