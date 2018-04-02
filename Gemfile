@@ -24,6 +24,7 @@ gem 'devise'
 gem 'pundit'
 gem 'stripe'
 gem 'redcarpet'
+gem 'loofah', '~> 2.2', '>= 2.2.1'
 
 group :development, :test do
    gem 'byebug'
